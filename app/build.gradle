@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../dependencies.gradle'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.vladbakalo.imdbcient"
+        minSdkVersion 26
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+            debuggable true
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation      libraries.androidx_appcompat
+    implementation      libraries.androidx_legacy_support
+    implementation      libraries.androidx_core
+    implementation      libraries.androidx_activity
+    implementation      libraries.androidx_fragment
+    implementation      libraries.jetbrains_kotlin
+
+    //DataBinding
+    implementation      libraries.androidx_lifecycle_ext
+    implementation      libraries.androidx_lifecycle_viewmodel
+    kapt                libraries.databinding_compiler
+
+    //Android-Arch
+    implementation      libraries.lifecycle_runtime
+    implementation      libraries.lifecycle_ext
+    kapt                libraries.lifecycle_compiler
+
+    //Retrofit
+    implementation      libraries.retrofit
+    implementation      libraries.retrofit_gson
+
+}
