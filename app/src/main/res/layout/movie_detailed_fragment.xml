@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/movieDetailedClRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.movie_detailed.MovieDetailedFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/movieDetailedIvImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/detailed_movie_image_height"
+            android:layout_margin="@dimen/list_item_margin_half"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieDetailedTvTitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/list_item_margin"
+            android:textSize="@dimen/text_x"
+            app:layout_constraintTop_toBottomOf="@id/movieDetailedIvImage"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Title"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieDetailedTvPopularityText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/list_item_margin"
+            android:textSize="@dimen/text_x"
+            app:layout_constraintTop_toBottomOf="@+id/movieDetailedTvTitleText"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Popularity"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/movieDetailedTvOverviewText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/list_item_margin"
+            android:textSize="@dimen/text_x"
+            app:layout_constraintTop_toBottomOf="@+id/movieDetailedTvPopularityText"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Overview"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

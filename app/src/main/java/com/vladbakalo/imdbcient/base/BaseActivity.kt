@@ -1,7 +1,15 @@
 package com.vladbakalo.imdbcient.base
 
-import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import dagger.android.DaggerActivity
+import dagger.android.support.DaggerAppCompatActivity
 
 
-open class BaseActivity: AppCompatActivity() {
+abstract class BaseActivity: DaggerAppCompatActivity() {
+
+    abstract fun getNavController(): NavController
+
+    fun isCurrentNavHasBackStack(): Boolean {
+        return getNavController().previousBackStackEntry != null
+    }
 }

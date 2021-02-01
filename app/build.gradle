@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.vladbakalo.imdbcient"
-        minSdkVersion 26
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -39,6 +39,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -48,11 +51,18 @@ dependencies {
     implementation      libraries.androidx_core
     implementation      libraries.androidx_activity
     implementation      libraries.androidx_fragment
-    implementation      libraries.jetbrains_kotlin
-
-    //DataBinding
     implementation      libraries.androidx_lifecycle_ext
     implementation      libraries.androidx_lifecycle_viewmodel
+    implementation      libraries.androidx_lifecycle_livedata
+    implementation      libraries.jetbrains_kotlin
+
+    //UI
+    implementation      libraries.androidx_constraintlayout
+    implementation      libraries.androidx_recyclerview
+    implementation      libraries.androidx_cardview
+    implementation      libraries.google_material
+
+    //DataBinding
     kapt                libraries.databinding_compiler
 
     //Android-Arch
@@ -63,5 +73,19 @@ dependencies {
     //Retrofit
     implementation      libraries.retrofit
     implementation      libraries.retrofit_gson
+
+    //Di
+    implementation      libraries.dagger
+    implementation      libraries.dagger_android
+    implementation      libraries.dagger_android_support
+    kapt                libraries.dagger_compiler
+    kapt                libraries.dagger_android_processor
+
+    //Navigation
+    implementation      libraries.navigation_fragment
+    implementation      libraries.navigation_ui
+
+    //Other
+    implementation      libraries.picasso
 
 }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="text_xxl">20sp</dimen>     <!-- header -->
+    <dimen name="text_xl">18sp</dimen>      <!-- title -->
+    <dimen name="text_x">16sp</dimen>       <!-- subtitle -->
+    <dimen name="text_l">14sp</dimen>       <!-- labels -->
+    <dimen name="text_m">12sp</dimen>       <!-- message & buttons & main links -->
+    <dimen name="text_s">10sp</dimen>       <!-- hint & input fields & additional links & errors -->
+    <dimen name="text_xs">8sp</dimen>       <!-- additional unimportant information -->
+
+    <dimen name="list_item_margin">16dp</dimen>
+    <dimen name="list_item_margin_half">8dp</dimen>
+
+    <dimen name="item_movie_height">140dp</dimen>
+
+    <dimen name="detailed_movie_image_height">300dp</dimen>
+</resources>
